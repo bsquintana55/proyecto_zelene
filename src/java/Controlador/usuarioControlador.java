@@ -56,7 +56,7 @@ public class usuarioControlador extends HttpServlet {
             case 1:
                     //inicio de sesion
                 if (usudao.inicioSesion(nombre_usua, contra_usua)) {
-                    request.getRequestDispatcher("dashbo.jsp").forward(request, response);
+                    request.getRequestDispatcher("dashboard.jsp").forward(request, response);
                 } else {
                     request.setAttribute("MensajeError", "Verifique sus datos, por favor.");
                     request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -66,40 +66,12 @@ public class usuarioControlador extends HttpServlet {
             case 2:
                 if (usudao.agregarRegistro()) {
                     request.setAttribute("MensajeExito", "El usuario se registro correctamente");
-                    
-                    
-                      //correo
-                    ServletContext context = getServletContext();
-
-                    host = context.getInitParameter("host");
-                    puerto = context.getInitParameter("puerto");
-                    usuarioCorreo = context.getInitParameter("usuarioCorreo");
-                    password = context.getInitParameter("password");
-
-                    String receptor = request.getParameter("textLogin");
-                    String asunto = "CORREO DE REGISTRO";
-                    String contenido = "SEA BIENVENIDO :)))";
-                    String resultadoMensaje = "";
-
-                    try {
-
-                        PropiedadesCorreo.envioCorreo(host, puerto, usuarioCorreo, password, receptor, asunto, contenido);
-                        resultadoMensaje = "El mensaje se envio de forma correcta";
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        resultadoMensaje = "Error al enviar el mensaje " + e.getMessage();
-                    } finally {
-                        request.setAttribute("mensaje", resultadoMensaje);
-                        getServletContext().getRequestDispatcher("/resultado.jsp").forward(request, response);
-                    } 
-                    
-                    
-                    
-                    
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+ 
                 } else {
                     request.setAttribute("MensajeError", "El usuario no se registro correctamente");
                 }
-                request.getRequestDispatcher("registrarUsuario.jsp").forward(request, response);
+                request.getRequestDispatcher("registrer.jsp").forward(request, response);
                 break;
 
             case 3:

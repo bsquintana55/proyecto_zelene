@@ -6,8 +6,10 @@ package Controlador;
  * and open the template in the editor.
  */
 
+import JavaMail.PropiedadesCorreo;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -66,6 +68,33 @@ public class partiControlador extends HttpServlet {
             case 1:  //agregar registro
              
             if (pardao.agregarRegistro()) {
+                
+                  //correo
+                    ServletContext context = getServletContext();
+
+                    host = context.getInitParameter("host");
+                    puerto = context.getInitParameter("puerto");
+                    usuarioCorreo = context.getInitParameter("usuarioCorreo");
+                    password = context.getInitParameter("password");
+
+                    String receptor = request.getParameter("textLogin");
+                    String asunto = "CORREO DE REGISTRO";
+                    String contenido = "SEA BIENVENIDO :)))";
+                    String resultadoMensaje = "";
+
+                    try {
+
+                        PropiedadesCorreo.envioCorreo(host, puerto, usuarioCorreo, password, receptor, asunto, contenido);
+                        resultadoMensaje = "El mensaje se envio de forma correcta";
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        resultadoMensaje = "Error al enviar el mensaje " + e.getMessage();
+                    } finally {
+                        request.setAttribute("mensaje", resultadoMensaje);
+                        getServletContext().getRequestDispatcher("/resultado.jsp").forward(request, response);
+                    }
+                
+ 
                 
                     request.setAttribute("MensajeExito", "El participante se creo correctamente");
                 } else {

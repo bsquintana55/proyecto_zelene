@@ -18,19 +18,19 @@ and open the template in the editor.
    */
 .fondo_menu{
   
-    background: url(/img/fondo/fondo_q.jpg);
+    background: url(img/fondo/fondo_q.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.bg-crear_evento{
-    background: url(/img/fondo/fondo_k.jpg);
+.bg-login-image{
+    background-image: url(img/09.png);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
 }
 
 .bg-top{   
-    background: url(/img/fondo/fondo_q.jpg);
+    background: url(img/fondo/fondo_q.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -40,26 +40,27 @@ and open the template in the editor.
     border-radius: 1.35rem;
 }
 .bg-formulario-image{
-    background: url(/img/02.png);
+    background: url(img/02.png);
     background-size: cover;
     background-repeat: no-repeat;
 
 }
+
 .bg-fondo-form{
 
-    background: url(/img/fondo/fondo_k.jpg);
+    background: url(img/fondo/fondo_k.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .bg-reg-image{
 
-    background: url(/img/11.png);
+    background: url(img/11.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 .bg-contraseña{
-    background-image: url(/img/05.png);
+    background-image: url(img/05.png);
     background-size: cover;
     background-repeat: no-repeat;
 }

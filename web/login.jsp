@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="css/dash.css">
 </head>
 
-<body class="bg-fondo-form">
+<body class="bg-fondo-form"  style="background-image: url(img/fondo/fondo_k.jpg)">
 
     <div class="container">
 
@@ -46,7 +46,14 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"
+                                  style="
+                                background-image: url(img/09.png);
+                                background-size: cover;
+                                background-repeat: no-repeat; 
+                                  "
+                                 
+                                 ></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -54,12 +61,12 @@
                                     </div>
                                     <form class="user">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="text" name="text_nombreu" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Ingresar tú Usuario...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input type="password" name="text_contrau" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Contraseña">
                                         </div>
                                         <div class="form-group">
@@ -68,9 +75,19 @@
                                                 <label class="custom-control-label" for="customCheck">Recordarme</label>
                                             </div>
                                         </div>
-                                        <a href="dashboard.jsp" class="btn btn-primary btn-user btn-block">
-                                            Ingresar
-                                        </a>
+                                       
+                                        
+                                         <button class="btn btn-primary btn-user btn-block">Ingresar</button>
+                                           <input type="hidden" value="1" name="opcion">
+                                       
+                                        <hr>
+                                       
+                                        <%if (request.getAttribute("MensajeError") != null) {%>
+                                                    ${MensajeError}    
+                                                    <% } else {%>
+                                                    ${MensajeExito}
+                                                    <% }%>
+                                        
                                         <hr>
                                        
                                     </form>

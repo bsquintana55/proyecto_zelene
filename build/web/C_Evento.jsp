@@ -29,7 +29,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/dash.css">
@@ -38,13 +38,25 @@
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
-<body id="page-top">
+<body id="page-top"
+      style="
+        background: url(img/fondo/fondo_q.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+      >
 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav fondo_menu sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav fondo_menu sidebar sidebar-dark accordion" id="accordionSidebar"
+            style="
+                background: url(img/fondo/fondo_q.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            "
+            >
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.jsp">
@@ -115,7 +127,12 @@
 
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column"
+             style="
+                background: url(img/fondo/fondo_q.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            ">
 
             <!-- Main Content -->
             <div id="content">
@@ -181,24 +198,27 @@
 
   
          <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container-fluid"
+                   style="
+                background: url(img/fondo/fondo_q.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            " 
+                >
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4"></p>
+                 
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Eventos Creados</h6>
-                            <form method="post" action="evento">
+                           <h1 class="h3 mb-2 text-gray-800">Eventos</h1>
+                           <form method="post" action="evento" class="form-inline mr-auto w-100 navbar-search">
             
-                                <input type="text" name="id_even" class="" placeholder="Buscar Evento">
-
-                                <button class="">Consultar Evento</button>
+                                <input type="text" name="id_even" class="form-control bg-light border-2 small" placeholder="Buscar Evento">
+                                <button class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
                                 <input type="hidden" value="3" name="opcion">        
 
-
+                              
                             </form>
                             
                             
@@ -260,9 +280,9 @@
                                             <td><%=eveVO.getId_usua()%></td>
                                              
                                         <td> <input type="hidden" value="4" name="opcion"  >
-
-                                    <button class="" value="<%=eveVO.getId_even()%>">Eliminar</button></td>
-
+                                        //name y consulta por id
+                                        <button class="btn btn-primary"  name="id_even" value="<%=eveVO.getId_even()%>">E</i></button></td>
+                                       
                                         </tr>
 
                                          <%}%>

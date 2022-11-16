@@ -31,7 +31,14 @@
 
 </head>
 
-<body class="bg-fondo-form">
+<body class="bg-fondo-form"
+       style="
+            background: url(img/fondo/fondo_k.jpg);
+            background-size: cover;
+            background-repeat: no-repeat; 
+          "
+      
+      >
 
     <div class="container">
 
@@ -44,7 +51,15 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-contraseña-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-contraseña-image"
+                                 
+                                 style="
+                                    background-image: url(img/05.png);
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                  "
+                                 
+                                 ></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">

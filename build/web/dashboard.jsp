@@ -3,6 +3,11 @@
     Created on : 15/11/2022, 08:20:25 PM
     Author     : solan
 --%>
+<%@page import="modeloVO.usuarioVO"%>
+<%@page import="modeloDAO.usuarioDAO"%>
+<%@page import="modeloVO.eventoVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modeloDAO.eventoDAO"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -33,13 +38,25 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top"
+        style="
+        background: url(img/fondo/fondo_q.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+      >
 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav fondo_menu sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav fondo_menu sidebar sidebar-dark accordion" id="accordionSidebar"
+              style="
+                background: url(img/fondo/fondo_q.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            "
+            >
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.jsp">
@@ -143,7 +160,13 @@
 
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column"
+              style="
+                background: url(img/fondo/fondo_q.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            "
+            >
 
             <!-- Main Content -->
             <div id="content">
@@ -231,10 +254,14 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    <div class="container-fluid">
+                        
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                   
+                        <div class="card-header py-3">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
@@ -253,8 +280,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                              <a href="regEvento.jsp">Crear Evento</a>  
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Planealo</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -271,11 +299,12 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                                <a href="participantes.jsp">Consulta los participantes</a>  
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Conocelos</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-face-awesome fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -288,11 +317,12 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                <a href="register.jsp">Crear Usuario</a>  
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Más ayuda</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -318,8 +348,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                                <a href="#card-header">Visualiza Eventos creados</a>  
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -328,6 +359,10 @@
                                 </div>
                             </div>
                         </div>
+
+                        
+                        
+                        
                     </div>
 
 
@@ -338,54 +373,72 @@
 
 
               <!-- Begin Page Content -->
-              <div class="container-fluid">
+             
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Participantes</h1>
-                <p class="mb-4"></a>.</p>
-
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        <h1 class="h3 mb-2 text-gray-800">Eventos en la BD</h1>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
-                                   
-                                </tbody>
-                            </table>
+                    
+                     <div class="card-body">
+                            <div class="table-responsive">
+                                
+                                <form method="post" action="evento">  
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Num. Evento</th>
+                                            <th>Nombre Evento</th>
+                                            <th>Fecha Inicio</th>
+                                            <th>Fecha Final</th>
+                                            <th>Estado</th>
+                                            <th>Informacion</th>
+                                            <th>Administrador</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Num. Evento</th>
+                                            <th>Nombre Evento</th>
+                                            <th>Fecha Inicio</th>
+                                            <th>Fecha Final</th>
+                                            <th>Estado</th>
+                                            <th>Informacion</th>
+                                            <th>Administrador</th>
+                                        </tr>
+                                    </tfoot>
+                                    <%
+                                        eventoVO eveVO = new eventoVO();
+                                        eventoDAO eveDAO = new eventoDAO();
+                                        ArrayList<eventoVO> listaEvento = eveDAO.listar();
+                                        for (int i = 0; i < listaEvento.size(); i++) {
+
+                                            eveVO = listaEvento.get(i);
+
+                                    %>
+                                    <tbody>
+                                        <tr>
+                                             <td><%=eveVO.getId_even()%></td>
+                                            <td><%=eveVO.getNombre_even()%></td>
+                                            <td><%=eveVO.getFeInicio_even()%></td>
+                                            <td><%=eveVO.getFeFinal_even()%></td>
+                                            <td><%=eveVO.getEstado_even()%></td>
+                                            <td><%=eveVO.getDescrip_even()%></td> 
+                                            <td><%=eveVO.getId_usua()%></td>
+                                             
+                                    
+                                       
+                                        </tr>
+
+                                         <%}%>
+                                       
+                                    </tbody>
+                                </table>
+                        </form>
+                            </div>
                         </div>
-                    </div>
                 </div>
 
             </div>

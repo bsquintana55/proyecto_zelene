@@ -87,6 +87,7 @@
            <button class="" value="<%=eveVO.getId_even()%>">Eliminar</button></td>
                
                 </tr>
+                
                 <%}%>
 
                 </tbody>

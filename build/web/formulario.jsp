@@ -28,11 +28,11 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/dash.css" type="text/css">
 
 </head>
 
-<body class="bg-fondo-form">
+<body class="bg-fondo-form" style="background-image: url(img/fondo/fondo_k.jpg)">
 
     <div class="container">
 
@@ -45,12 +45,22 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-formulario-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-formulario-image" 
+                                 style="
+                                  background: url(img/02.png);
+                                  background-size: cover;
+                                  background-repeat: no-repeat;">
+        
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">¡No pierdas la oportunidad!</h1>
                                     </div>
+                                    
+                                    
+                                    
+                                    
                                     <form class="user" method="post" action="Participante">
 
                                         <div class="form-group">
@@ -69,12 +79,24 @@
                                         </div>
                                         <br>
                                       
-                                        <a href="form_Even.jsp" class="btn btn-primary btn-user btn-block">
-                                            Registrarse
+                                        <a href="form_Even.jsp" class="">
+                                           <button class="btn btn-primary btn-user btn-block">Registrarse</button>
+                                           <input type="hidden" value="1" name="opcion"> 
                                         </a>
+                                        
+                                        
+                                        <hr>
+                                       
+                                        <%if (request.getAttribute("MensajeError") != null) {%>
+                                                    ${MensajeError}    
+                                                    <% } else {%>
+                                                    ${MensajeExito}
+                                                    <% }%>
                                         <hr>
                                        
                                     </form>
+                                        
+                                        
                                     
                                     <div class="text-center">
                                         <a class="small" href="C_Evento.jsp">Ir a Eventos</a>
