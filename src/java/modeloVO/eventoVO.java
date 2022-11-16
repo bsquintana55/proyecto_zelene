@@ -48,11 +48,15 @@ public class eventoVO {
     }
     
     
-    
-  
-
     public eventoVO() {
     }
+
+    public eventoVO(String id_even) {
+        this.id_even = id_even;
+    }
+
+
+  
 
     
 

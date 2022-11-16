@@ -79,29 +79,30 @@ public class eventoControlador extends HttpServlet {
                 } else {
                     request.setAttribute("MensajeError", "El evento no se actualizo correctamente.");
                 }
-                request.getRequestDispatcher("consultarEvento.jsp").forward(request, response);
+                request.getRequestDispatcher("C_Evento.jsp").forward(request, response);
                
                 break;
                 
 
-            case 3:
+            case 3://consultar por id
                  
                 evO = evedao.consultarId(id_even);
                 if (evO != null)
                 {
                     request.setAttribute("Consulta_evento", evO);
-                    request.getRequestDispatcher("actualizarEvento.jsp").forward(request, response);
+                    request.getRequestDispatcher("A_Evento.jsp").forward(request, response);
                 }
                 else
                 {
                     request.setAttribute("MensajeError", "No se encuentran resultados para tu busqueda."
                             + " Por favor busque correctamente");
 
-                    request.getRequestDispatcher("consultarEvento.jsp").forward(request, response);
+                    request.getRequestDispatcher("C_Evento.jsp").forward(request, response);
                 }
                 break;
 
-            case 4:
+                
+            case 4://elimina evento
                 if (evedao.eliminarRegistro())
                 {
                     request.setAttribute("MensajeExito", "La evento se pudo elimino");
@@ -110,9 +111,10 @@ public class eventoControlador extends HttpServlet {
                 {
                     request.setAttribute("MensajeError", "La evento no se pudo eliminar");
                 }
-                request.getRequestDispatcher("consultarEvento.jsp").forward(request, response);
+                request.getRequestDispatcher("C_Evento.jsp").forward(request, response);
                 
                 break;
+                
         }//termina el switch
 
        

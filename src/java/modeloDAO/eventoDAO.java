@@ -120,12 +120,22 @@ public class eventoDAO extends ConexionBd implements Crud {
 
     @Override
     public boolean eliminarRegistro() {
+       
       try {
-            sql = "update evento set estado_even='T' where estado_even='I'";
+            sql = "UPDATE evento SET estado_even = 'T' WHERE estado_even='I'";     
             puente = conexion.prepareStatement(sql);
-           
             puente.executeUpdate();
+        
             operacion = true;
+
+         /*  mensajero = puente.executeQuery();
+            //utiliza el evento vo de sin el id obvi
+          while (mensajero.next()) {
+                eventoVO eveVO = new eventoVO
+                                (
+                                        mensajero.getString(1)
+                                );
+            }*/
 
         } catch (SQLException e) {
             Logger.getLogger(eventoDAO.class.getName()).log(Level.SEVERE, null, e);

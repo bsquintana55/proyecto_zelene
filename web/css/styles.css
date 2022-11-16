@@ -1,13 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 15/11/2022, 07:46:46 AM
-    Author     : solan
-*/
-
 @charset "UTF-8";
 /*!
 * Start Bootstrap - Modern Business v5.0.6 (https://startbootstrap.com/template-overviews/modern-business)
@@ -102,6 +92,91 @@ body {
 
 
 
+
+#logo_nav{
+  width: 13rem;
+  margin-top: 4px;
+ 
+}
+
+@media (min-width: 376px) {
+  #logo_nav2{
+    display: none
+   }
+  
+}
+
+@media (max-width: 375px) {
+
+  #logo_nav{
+   display: none;
+   
+  }
+  #logo_nav2{
+    display: block;
+    width: 2.5em;
+    margin-top: 4px;
+   
+  }
+ 
+  
+}
+
+@media (max-width: 991px) {
+  .bg-dark {
+    --bs-bg-opacity: 1;
+    background-image: url(/assets/images/fondos/fondo_b.jpg) !important;
+    background-size: cover;
+  }
+  
+  .fondo_menu{
+  background-image: url(/assets/images/fondos/fondo_b.jpg) ;
+  background-size: cover;
+}
+.fondo_parti{
+  background-image: url(/assets/images/fondos/fondo_b.jpg) ;
+  background-size: cover;
+  /*background-repeat: no-repeat;*/
+}
+.fondo_sistema{
+   background-image: url(/assets/images/fondos/fondo_b.jpg) !important;
+  background-size: cover;
+
+} 
+  
+}
+
+@media (min-width: 992px) {
+
+.fondo_menu{
+  background-image: url(/assets/images/fondos/fondo_h.jpg) ;
+  background-size: cover;
+}
+.fondo_parti{
+  background-image: url(/assets/images/fondos/fondo_h.jpg) ;
+  background-size: cover;
+  /*background-repeat: no-repeat;*/
+}
+.fondo_sistema{
+   background-image: url(/assets/images/fondos/fondo_h.jpg) !important;
+  background-size: cover;
+
+}
+.bg-dark {
+  --bs-bg-opacity: 1;
+  background-image: url(/assets/images/fondos/fondo_h.jpg) !important;
+  background-size: cover;
+}
+ 
+}
+
+
+
+.fondo_color{
+
+  color:#4d041f;
+
+}
 
 
 

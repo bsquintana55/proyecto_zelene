@@ -1,113 +1,108 @@
+
+<%-- 
+    Document   : formulario
+    Created on : 15/11/2022, 08:02:42 PM
+    Author     : solan
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<title>Login ZELENE</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/zele/icono_final.png"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
- <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="img/zele/icono_final.png" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="img/zele/icono_final.png"/>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dash.css">
 </head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				
-				<img class="logo_login" src="img/zele/zelene.png">
 
-				<div class="login100-pic js-tilt" data-tilt>
-					<img src="img/zele/icono_final.png" alt="IMG">
-				</div>
+<body class="bg-fondo-form">
 
-			
-				<form class="login100-form validate-form" method="post" action="usuario" >
-					<span class="login100-form-title">
-						Inicio de Sesión
-					</span>
+    <div class="container">
 
-					<div class="wrap-input100 validate-input" data-validate = "Ingrese su usuario">
-			
-			<input class="input100" type="text" name="text_nombreu" placeholder="Nombre de Usuario">
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
 
+            <div class="col-xl-10 col-lg-12 col-md-9">
 
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-user-circle" aria-hidden="true"></i>
-						</span>
-					</div>
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Bienvenido Admin!</h1>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Ingresar tÃº Usuario...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="ContraseÃ±a">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Recordarme</label>
+                                            </div>
+                                        </div>
+                                        <a href="dashboard.jsp" class="btn btn-primary btn-user btn-block">
+                                            Ingresar
+                                        </a>
+                                        <hr>
+                                       
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="recuperar-contraseÃ±a.jsp">Olvide ContraseÃ±a</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="register.jsp">Â¿Ya tienes cuenta? Â¡Entra!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Ingrese su contraseña">
+            </div>
 
-			<input class="input100" type="password" name="text_contrau" placeholder="Contraseña">
+        </div>
 
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
+    </div>
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Entrar
-						</button>
-            <input type="hidden" value="1" name="opcion">                                
-					</div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-					<div class="text-center p-t-12">
-						<span class="txt1">
-							¿Se le olvido la
-						</span>
-						<a class="txt2" href="#">
-							Contraseña?
-						</a>
-					</div>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
-							Registrate
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
-	
-
-	
-<!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
 </body>
+
 </html>

@@ -43,21 +43,21 @@ and open the template in the editor.
 @media (max-width: 991px) {
   .bg-dark {
    
-    background-image: url(/assets/images/fondos/fondo_b.jpg) !important;
+    background-image: url(/img/fondo/fondo_b.jpg) !important;
     background-size: cover;
   }
   
   .fondo_menu{
-  background-image: url(/assets/images/fondos/fondo_b.jpg) ;
+  background-image: url(/img/fondo/fondo_b.jpg) ;
   background-size: cover;
 }
 .fondo_parti{
-  background-image: url(/assets/images/fondos/fondo_b.jpg) ;
+  background-image: url(/img/fondo/fondo_b.jpg) ;
   background-size: cover;
   /*background-repeat: no-repeat;*/
 }
 .fondo_sistema{
-   background-image: url(/assets/images/fondos/fondo_b.jpg) !important;
+   background-image: url(/img/fondo/fondo_b.jpg) !important;
   background-size: cover;
 
 } 
@@ -67,22 +67,22 @@ and open the template in the editor.
 @media (min-width: 992px) {
 
 .fondo_menu{
-  background-image: url(/assets/images/fondos/fondo_h.jpg) ;
+  background-image: url(img/fondo/fondo_h.jpg) ;
   background-size: cover;
 }
 .fondo_parti{
-  background-image: url(/assets/images/fondos/fondo_h.jpg) ;
+  background-image: url(img/fondo/fondo_h.jpg) ;
   background-size: cover;
   /*background-repeat: no-repeat;*/
 }
 .fondo_sistema{
-   background-image: url(/assets/images/fondos/fondo_h.jpg) !important;
+   background-image: url(img/fondo/fondo_h.jpg) !important;
   background-size: cover;
 
 }
 .bg-dark {
   
-  background-image: url(/assets/images/fondos/fondo_h.jpg) !important;
+  background-image: url(img/fondo/fondo_h.jpg) !important;
   background-size: cover;
 }
  

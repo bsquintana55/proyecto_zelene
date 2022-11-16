@@ -59,6 +59,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\" rel=\"stylesheet\" />\n");
       out.write("        <!-- Core theme CSS (includes Bootstrap)-->\n");
       out.write("        <link href=\"css/styles.css\" rel=\"stylesheet\" />\n");
+      out.write("        <link href=\"css/index.css\" rel=\"stylesheet\"/>\n");
+      out.write("        \n");
       out.write("    </head>\n");
       out.write("    <body class=\"d-flex flex-column h-100\">\n");
       out.write("        <main class=\"flex-shrink-0\">\n");
@@ -89,8 +91,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("            </nav>\n");
-      out.write("            \n");
-      out.write("            <img src=\"/img/01.png\"/>\n");
+      out.write("             \n");
+      out.write("          \n");
       out.write("            <!-- Header-->\n");
       out.write("            <header class=\"py-5 fondo_menu\">\n");
       out.write("                <div class=\"container px-5\">\n");
