@@ -263,7 +263,7 @@
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     </div>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                                class="fas fa-download fa-sm text-white-50"></i> Reporte de Eventos</a>
                     </div>
 
                     <!-- Content Row -->

@@ -42,7 +42,7 @@
                 background-repeat: no-repeat;
           "
           >
-      <%
+        <%
             eventoVO eveVO = (eventoVO) request.getAttribute("Consulta_evento");
             if (eveVO != null) {
         %>

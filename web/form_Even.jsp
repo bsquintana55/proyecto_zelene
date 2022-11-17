@@ -4,6 +4,9 @@
     Author     : solan
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="modeloDAO.eventoDAO"%>
+<%@page import="modeloVO.eventoVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -50,6 +53,18 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">¡Elige tú evento!</h1>
                                     </div>
+                                    
+                                     
+                                        <%
+                                        eventoVO eveVO = new eventoVO();
+                                        eventoDAO eveDAO = new eventoDAO();
+                                        ArrayList<eventoVO> listEven = eveDAO.evento();
+                                        for (int a = 0; a < listEven.size(); a++) {
+
+                                            eveVO = listEven.get(a);
+
+                                        %>
+                                        
                                     <form class="user" method="post" action="Participante">
 
                                  

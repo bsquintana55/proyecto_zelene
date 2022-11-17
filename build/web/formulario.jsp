@@ -79,11 +79,9 @@
                                         </div>
                                         <br>
                                       
-                                        <a href="form_Even.jsp" class="">
                                            <button class="btn btn-primary btn-user btn-block">Registrarse</button>
                                            <input type="hidden" value="1" name="opcion"> 
-                                        </a>
-                                        
+                                     
                                         
                                         <hr>
                                        

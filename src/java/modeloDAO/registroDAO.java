@@ -11,33 +11,36 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modeloVO.eventoVO;
 import modeloVO.partiVO;
+import modeloVO.registroVO;
 
 /**
  *
- * @author solan
+ * @author Sena
  */
-public class partiDAO extends ConexionBd implements Crud {
-
-    //1. Declarar variables 
+public class registroDAO extends ConexionBd implements Crud {
+     //1. Declarar variables 
     private Connection conexion;
     private PreparedStatement puente;
     private ResultSet mensajero;
 
     private boolean operacion = false;
     private String sql;
-
-    private String id_parti = "", nombre_parti = "", correo_parti = "", celu_parti = "";
-
-    public partiDAO() {
-    }
-
-    //metodo para recibir datos del vo
-    public partiDAO(partiVO partVO) {
+    
+    private String id_reg="", 
+                   id_even="", 
+                   id_parti="",
+                   fecha_reg="";
+    
+    
+    
+    
+    
+     //metodo para recibir datos del vo
+    public registroDAO(registroVO regVO) {
         super();
 
         try {
@@ -45,32 +48,42 @@ public class partiDAO extends ConexionBd implements Crud {
             conexion = this.obtenerConexion();
 
             //taer datos
-            id_parti = partVO.getId_parti();
-            nombre_parti = partVO.getNombre_parti();
-            correo_parti = partVO.getCorreo_parti();
-            celu_parti = partVO.getCelu_parti();
+            id_reg = regVO.getId_reg();
+            id_even= regVO.getId_even();
+            id_parti = regVO.getId_parti();
+            fecha_reg= regVO.getFecha_reg();
+            
 
         } catch (Exception e) {
-            Logger.getLogger(eventoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(registroDAO.class.getName()).log(Level.SEVERE, null, e);
         }
 
     }
+    
+
+
+    
+    
 
     @Override
     public boolean agregarRegistro() {
+     try {
 
-        try {
-
-            sql = "INSERT INTO participante(nombre_parti, correo_parti, celu_parti) VALUES (?,?,?);";
+            sql = "INSERT INTO registro(id_even, id_parti) VALUES (?, ?);";
             puente = conexion.prepareStatement(sql);
-            puente.setString(1, nombre_parti);
-            puente.setString(2, correo_parti);
-            puente.setString(3, celu_parti);
+           
+            puente.setString(1, id_even);
+            puente.setString(2, id_parti);
 
             puente.executeUpdate();
             operacion = true;
 
-            
+           if (operacion == true) {
+                
+                //crear condicianal para traer el id con consulta nombre = id y taer lista de los id y registrar en la tabla registro
+                  sql = "SELECT registro.id_parti FROM registro INNER JOIN participante ON registro.id_parti = participante.id_parti;";
+                  
+            }
 
         } catch (SQLException e) {
             Logger.getLogger(eventoDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -82,7 +95,6 @@ public class partiDAO extends ConexionBd implements Crud {
             }
         }
         return operacion;
-
     }
 
     @Override
@@ -94,54 +106,9 @@ public class partiDAO extends ConexionBd implements Crud {
     public boolean eliminarRegistro() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-   
     
-   //metodo para la data table  
-   public ArrayList <partiVO>listar()
-    {
-        ArrayList<partiVO>listaParti = new ArrayList<>(); 
-        
-        try 
-        {
-            conexion = this.obtenerConexion();
-           
-           sql = "SELECT participante.id_parti, participante.nombre_parti, participante.correo_parti, participante.celu_parti FROM participante;";
-           puente = conexion.prepareStatement(sql);
-           mensajero = puente.executeQuery();
-           while(mensajero.next())
-           {
-               partiVO parVO = new partiVO(
-                    mensajero.getString(1),
-                    mensajero.getString(2), 
-                    mensajero.getString(3), 
-                    mensajero.getString(4)
-                      
-               );
-               listaParti.add(parVO);
-           }
-        } catch (SQLException e) 
-        {
-            Logger.getLogger(eventoDAO.class.getName()).log(Level.SEVERE, null, e);
-        }
-        finally
-        {
-            try 
-            {
-                this.cerrarConexion();
-            } catch (SQLException e) 
-            {
-                Logger.getLogger(eventoDAO.class.getName()).log(Level.SEVERE, null, e);
-            }
-        }
-        return listaParti;
-    }
-     
-   
-   
-   
-   
-   
+    
+       
    
    //lista de los eventos con estado I, iniciado
   
@@ -149,7 +116,7 @@ public class partiDAO extends ConexionBd implements Crud {
         eventoVO eveVO = null;
         try {
             conexion = this.obtenerConexion();
-            sql = "SELECT evento.nombre_even FROM evento WHERE evento.estado_even='I';";
+            sql = "SELECT registro.id_even FROM registro INNER JOIN evento ON registro.id_even = evento.id_even WHERE evento.estado_even='I';";
             puente = conexion.prepareStatement(sql);
           
                 
@@ -178,7 +145,7 @@ public class partiDAO extends ConexionBd implements Crud {
         partiVO partVO = null;
         try {
             conexion = this.obtenerConexion();
-            sql = "SELECT participante.nombre_parti FROM participante WHERE participante.id_parti = ?;";
+            sql = "SELECT registro.id_parti FROM registro INNER JOIN participante ON registro.id_parti = participante.id_parti;";
             puente = conexion.prepareStatement(sql);
             
                 
@@ -203,21 +170,6 @@ public class partiDAO extends ConexionBd implements Crud {
     }
     
     
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
    
    

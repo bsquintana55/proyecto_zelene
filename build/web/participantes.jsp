@@ -1,11 +1,18 @@
 <%-- 
-    Document   : participantes
-    Created on : 15/11/2022, 08:25:56 PM
-    Author     : solan
+    Document   : consultarMascota
+    Created on : 25/07/2022, 09:50:38 AM
+    Author     : julia_000
 --%>
+<%@page import="modeloDAO.eventoDAO"%>
+<%@page import="modeloDAO.eventoDAO"%>
+<%@page import="modeloVO.eventoVO"%>
+<%@page import="modeloVO.usuarioVO"%>
+<%@page import="modeloDAO.usuarioDAO"%>
+<%@page import="modeloVO.partiVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modeloDAO.partiDAO"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Participantes</title>
+    <title>Eventos</title>
     <link rel="icon" type="image/x-icon" href="img/zele/icono_final.png"/>
 
     <!-- Custom fonts for this template -->
@@ -25,7 +32,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/dash.css">
@@ -34,13 +41,25 @@
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
-<body id="page-top">
+<body id="page-top"
+      style="
+        background: url(img/fondo/fondo_q.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+      >
 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav fondo_menu sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav fondo_menu sidebar sidebar-dark accordion" id="accordionSidebar"
+            style="
+                background: url(img/fondo/fondo_q.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            "
+            >
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.jsp">
@@ -111,7 +130,12 @@
 
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column"
+             style="
+                background: url(img/fondo/fondo_q.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            ">
 
             <!-- Main Content -->
             <div id="content">
@@ -124,19 +148,8 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                   
+                    
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -147,22 +160,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+
                         </li>
 
 
@@ -174,7 +172,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                     src="img/01.png">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -202,63 +200,91 @@
 
 
   
-
-
-
-
-
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
+         <!-- Begin Page Content -->
+                <div class="container-fluid"
+                   style="
+                background: url(img/fondo/fondo_q.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            " 
+                >
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                           <h1 class="h3 mb-2 text-gray-800">Participantes</h1>
+                          
+
                         </div>
+                            
+                        
                         <div class="card-body">
+                            
                             <div class="table-responsive">
+                                
+                                <form method="post" action="evento">  
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Num. Evento</th>
+                                            <th>Nombre Evento</th>
+                                            <th>Fecha Inicio</th>
+                                            <th>Fecha Final</th>
+                                            <th>Estado</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Num. Evento</th>
+                                            <th>Nombre Evento</th>
+                                            <th>Fecha Inicio</th>
+                                            <th>Fecha Final</th>
+                                            <th>Evento</th>
+                                            
                                         </tr>
                                     </tfoot>
+                                    <%
+                                        partiVO parVO = new partiVO();
+                                        partiDAO parDAO = new partiDAO();
+                                        ArrayList<partiVO> listaParti = parDAO.listar();
+                                        for (int i = 0; i < listaParti.size(); i++) {
+
+                                            parVO = listaParti.get(i);
+                                         %>
+                                  
+                                         
+                                      
+                                        <%
+                                        eventoVO eveVO = new eventoVO();
+                                        eventoDAO eveDAO = new eventoDAO();
+                                        ArrayList<eventoVO> listEven = eveDAO.evento();
+                                        for (int a = 0; a < listEven.size(); a++) {
+
+                                            eveVO = listEven.get(a);
+
+                                        %>
                                     <tbody>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                           
+                                            <td><%=parVO.getId_parti()%></td>
+                                            <td><%=parVO.getNombre_parti()%></td>
+                                            <td><%=parVO.getCorreo_parti()%></td>
+                                            <td><%=parVO.getCelu_parti()%></td>
+                                            <td><%=eveVO.getNombre_even()%></td>
+                                             
+                                      
+                                      
                                         </tr>
+
+                                         <%}%>
                                        
                                     </tbody>
                                 </table>
+                        </form>
                             </div>
                         </div>
+                       
                     </div>
 
                 </div>
@@ -299,7 +325,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">¿Esta seguro de cerrar sesión?, recuerde guardar cualquier cambio.</div>
+                <div class="modal-body">¿Esta seguro de cerrar sesion?, recuerde guardar cualquier cambio.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="login.jsp">Cerrar Sesión</a>
@@ -324,6 +350,8 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
+      
 
 </body>
 

@@ -163,7 +163,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img">
+                                    src="img/01.png">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -192,7 +192,7 @@
 
 
 
-    <div class="container"  style=""> 
+        <div class="container" id="form-even" style=""> 
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -239,8 +239,8 @@
 
                                         <div class="form-group">
                                             <label for="">Descripción del evento</label>
-                                            <input type="text" name="descrip_even" class="form-control form-control-user"
-                                                id="exampleInputEmail" placeholder="Ingresar...">
+                                            <textarea rows="3" name="descrip_even" class="form-control"
+                                                id="exampleInputEmail" placeholder="Ingresar..."></textarea>
                                         </div>
 
                                         <div class="form-group">

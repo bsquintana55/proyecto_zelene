@@ -1,168 +1,135 @@
 <%-- 
-    Document   : contact
-    Created on : 11/11/2022, 07:05:27 PM
+    Document   : formulario
+    Created on : 15/11/2022, 08:02:42 PM
     Author     : solan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content />
-        <meta name="author" content />
-        <title>Unirse</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="img/zele/icono_final.png" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/index.css" rel="stylesheet"/> 
-    </head>
-    <body class="d-flex flex-column">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.jsp">
-                        <img id="logo_nav" src="img/zele/logo_fina_2.png" alt="">
-                        <img id="logo_nav2" src="img/zele/icono_final.png" alt="">
 
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
-                            <li class="nav-item"><a class="nav-link" href="index.jsp">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.jsp">Nosotros</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.jsp">Participar</a></li>
-                            <li class="nav-item"><a class="nav-link" href="eventos.jsp">Eventos</a></li>
+<head>
 
-                           <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Zelene</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                    <li><a class="dropdown-item" href="login.jsp">Login</a></li>
-                                </ul>
-                            </li>
-                           
-                          
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Page content-->
-            <section class="py-5">
-                <div class="container px-5">
-                    <!-- Contact form-->
-                    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
-                        <div class="text-center mb-5">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                            <h1 class="fw-bolder">Formulario de evento</h1>
-                            <p class="lead fw-normal text-muted mb-0">Estamos muy felices de que quieras participar, ¡te esperamos!</p>
-                        </div>
-                        <div class="row gx-5 justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- * * SB Forms Contact Form * *-->
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- This form is pre-integrated with SB Forms.-->
-                                <!-- To make this form functional, sign up at-->
-                                <!-- https://startbootstrap.com/solution/contact-forms-->
-                                <!-- to get an API token!-->
-                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                    <!-- Name input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                        <label for="name">Nombre</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Nombre es necesario.</div>
-                                    </div>
-                                    <!-- Email address input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                        <label for="email">Correo Gmail</label>
-                                        <div class="invalid-feedback" data-sb-feedback="email:required">Correo es necesario.</div>
-                                        <div class="invalid-feedback" data-sb-feedback="email:email">Gmail no valido.</div>
-                                    </div>
-                                    <!-- Phone number input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                        <label for="phone">Telefono celular</label>
-                                        <div class="invalid-feedback" data-sb-feedback="phone:required">Telefono es necesario.</div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Formulario de participación</title>
+    <link rel="icon" type="image/x-icon" href="img/zele/icono_final.png"/>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dash.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+       
+
+</head>
+
+<body class="bg-fondo-form" style="background-image: url(img/fondo/fondo_k.jpg)">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-formulario-image" 
+                                 style="
+                                  background: url(img/02.png);
+                                  background-size: cover;
+                                  background-repeat: no-repeat;">
+        
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">¡No pierdas la oportunidad!</h1>
                                     </div>
                                     
-                                    <!-- Submit success message-->
-                                    <!---->
-                                    <!-- This is what your users will see when the form-->
-                                    <!-- has successfully submitted-->
-                                    <div class="d-none" id="submitSuccessMessage">
-                                        <div class="text-center mb-3">
-                                            <div class="fw-bolder">Form submission successful!</div>
-                                            To activate this form, sign up at
-                                            <br />
-                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    
+                                    
+                                    
+                                    <form class="user" method="post" action="Participante">
+
+                                        <div class="form-group">
+                                            <input type="text" name="nombre_parti" class="form-control form-control-user"
+                                                id="" aria-describedby="emailHelp" data-sb-validations="required"
+                                                placeholder="Ingresar Nombre">
+                                            <div class="invalid-feedback" data-sb-feedback="name:required">Nombre es necesario.</div>
                                         </div>
+                                        <div class="form-group">
+                                            <input type="email" name="correo_parti" class="form-control form-control-user"
+                                                id="" aria-describedby="emailHelp" data-sb-validations="required"
+                                                placeholder="Ingresar Correo">
+                                             <div class="invalid-feedback" data-sb-feedback="email:required">Correo es necesario.</div>
+                                            <div class="invalid-feedback" data-sb-feedback="email:email">Gmail no valido.</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="celu_parti" class="form-control form-control-user"
+                                                id="" data-sb-validations="required" placeholder="Ingresar # Celular">
+                                             <div class="invalid-feedback" data-sb-feedback="phone:required">Telefono es necesario.</div>
+                                        </div>
+                                        <br>
+                                      
+                                        <a href="form_Even.jsp" class="">
+                                           <button class="btn btn-primary btn-user btn-block">Registrarse</button>
+                                           <input type="hidden" value="1" name="opcion"> 
+                                        </a>
+                                        
+                                        
+                                        <hr>
+                                       
+                                        <%if (request.getAttribute("MensajeError") != null) {%>
+                                                    ${MensajeError}    
+                                                    <% } else {%>
+                                                    ${MensajeExito}
+                                                    <% }%>
+                                        <hr>
+                                       
+                                    </form>
+                                        
+                                        
+                                    
+                                    <div class="text-center">
+                                        <a class="small" href="index.jsp">Ir a Eventos</a>
                                     </div>
-                                    <!-- Submit error message-->
-                                    <!---->
-                                    <!-- This is what your users will see when there is-->
-                                    <!-- an error submitting the form-->
-                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                    <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-                                </form>
+                                   
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Contact cards-->
-                    <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-dots"></i></div>
-                            <div class="h5 mb-2">Chat with us</div>
-                            <p class="text-muted mb-0">Chat live with one of our support specialists.</p>
-                        </div>
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people"></i></div>
-                            <div class="h5">Ask the community</div>
-                            <p class="text-muted mb-0">Explore our community forums and communicate with other users.</p>
-                        </div>
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-question-circle"></i></div>
-                            <div class="h5">Support center</div>
-                            <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>
-                        </div>
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
-                            <div class="h5">Call us</div>
-                            <p class="text-muted mb-0">Call us during normal business hours at (555) 892-9403.</p>
-                        </div>
-                    </div>
                 </div>
-            </section>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Contact</a>
-                    </div>
-                </div>
+
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
 </html>

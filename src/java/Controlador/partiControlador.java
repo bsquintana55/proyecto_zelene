@@ -68,8 +68,7 @@ public class partiControlador extends HttpServlet {
             case 1:  //agregar registro
              
             if (pardao.agregarRegistro()) {
-                
-                  //correo
+                 //correo
                     ServletContext context = getServletContext();
 
                     host = context.getInitParameter("host");
@@ -79,7 +78,7 @@ public class partiControlador extends HttpServlet {
 
                     String receptor = request.getParameter("textLogin");
                     String asunto = "CORREO DE REGISTRO";
-                    String contenido = "SEA BIENVENIDO :)))";
+                    String contenido = " Bienvenido a Greek, en este momento estas participando en el evento";
                     String resultadoMensaje = "";
 
                     try {
@@ -91,54 +90,20 @@ public class partiControlador extends HttpServlet {
                         resultadoMensaje = "Error al enviar el mensaje " + e.getMessage();
                     } finally {
                         request.setAttribute("mensaje", resultadoMensaje);
-                        getServletContext().getRequestDispatcher("/resultado.jsp").forward(request, response);
+                        getServletContext().getRequestDispatcher("respuesta.jsp").forward(request, response);
                     }
-                
- 
-                
+                    
                     request.setAttribute("MensajeExito", "El participante se creo correctamente");
                 } else {
                     request.setAttribute("MensajeError", "El participante no se creo correctamente");
                 }
-                request.getRequestDispatcher("regParti.jsp").forward(request, response);
+                request.getRequestDispatcher("formulario.jsp").forward(request, response);
                 
                 break;
                 
-            case 2:  //actualizar registro
-                
+           
+
                
-                break;
-                
-
-            case 3:
-                 
-               // partVO = pardao.consultarId(id_parti);
-                if (partVO != null)
-                {
-                    request.setAttribute("Consulta_evento", partVO);
-                    request.getRequestDispatcher("un_parti.jsp").forward(request, response);
-                }
-                else
-                {
-                    request.setAttribute("MensajeError", "No se encuentran resultados para tu busqueda."
-                            + " Por favor busque correctamente");
-
-                    request.getRequestDispatcher("consultarParti.jsp").forward(request, response);
-                }
-                break;
-
-            case 4:
-                if (pardao.eliminarRegistro())
-                {
-                    request.setAttribute("MensajeExito", "La evento se pudo elimino");
-                }
-                else
-                {
-                    request.setAttribute("MensajeError", "La evento no se pudo eliminar");
-                }
-                request.getRequestDispatcher("Participantes.jsp").forward(request, response);
-                
-                break;
         }//termina el switch
         
         

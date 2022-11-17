@@ -230,8 +230,45 @@ public class eventoDAO extends ConexionBd implements Crud {
     }
    
     
-    
-    
+    //evento lista de solo nombre
+   
+    /*
+     
+   public ArrayList <eventoVO>evento()
+    {
+        ArrayList<eventoVO>listEven = new ArrayList<>(); 
+        
+        try 
+        {
+            conexion = this.obtenerConexion();
+           
+           sql = "SELECT evento.nombre_even FROM evento;";
+           puente = conexion.prepareStatement(sql);
+           mensajero = puente.executeQuery();
+           while(mensajero.next())
+           {
+               eventoVO eveVO = new eventoVO(
+                    mensajero.getString(1)                      
+               );
+               listEven.add(eveVO);
+           }
+        } catch (SQLException e) 
+        {
+            Logger.getLogger(eventoDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        finally
+        {
+            try 
+            {
+                this.cerrarConexion();
+            } catch (SQLException e) 
+            {
+                Logger.getLogger(eventoDAO.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+        return listEven;
+    }
+   */
     
     
 }

@@ -169,7 +169,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img">
+                                     src="img/01.png">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -207,14 +207,16 @@
                 >
 
                  
-
+                  
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                           <h1 class="h3 mb-2 text-gray-800">Eventos</h1>
-                           <form method="post" action="evento" class="form-inline mr-auto w-100 navbar-search">
+                        
+                        
+                        <div class="card-body">
+                            <form method="post" action="evento" class="">
             
-                                <input type="text" name="id_even" class="form-control bg-light border-2 small" placeholder="Buscar Evento">
+                                <input type="text" name="id_even" class="form-control bg-light border-2 small" placeholder="Buscar Evento"
+                                       style="width: 12rem;">
                                 <button class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
                                 <input type="hidden" value="3" name="opcion">        
 
@@ -229,11 +231,7 @@
                             <% } else {%>
                             ${MensajeExito}
                             <%}%>
-
-                        </div>
                             
-                        
-                        <div class="card-body">
                             <div class="table-responsive">
                                 
                                 <form method="post" action="evento">  

@@ -11,6 +11,9 @@ and open the template in the editor.
 .navbar-brand{
     height: 50px;
 }
+#form-even{
+    margin-top: -4rem;
+}
  /* 
    background-image: url(/img/img/fondo/verti/fondo_o.jpg);
    background-color: #ad4215;

@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class formulario_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class contact_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -44,7 +44,6 @@ public final class formulario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"es\">\r\n");
       out.write("\r\n");
@@ -67,11 +66,11 @@ public final class formulario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("    <!-- Custom styles for this template-->\r\n");
       out.write("    <link href=\"css/sb-admin-2.min.css\" rel=\"stylesheet\">\r\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/dash.css\" type=\"text/css\">\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/dash.css\">\r\n");
       out.write("\r\n");
       out.write("</head>\r\n");
       out.write("\r\n");
-      out.write("<body class=\"bg-fondo-form\" style=\"background-image: url(img/fondo/fondo_k.jpg)\">\r\n");
+      out.write("<body class=\"bg-fondo-form\">\r\n");
       out.write("\r\n");
       out.write("    <div class=\"container\">\r\n");
       out.write("\r\n");
@@ -84,73 +83,34 @@ public final class formulario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"card-body p-0\">\r\n");
       out.write("                        <!-- Nested Row within Card Body -->\r\n");
       out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"col-lg-6 d-none d-lg-block bg-formulario-image\" \r\n");
-      out.write("                                 style=\"\r\n");
-      out.write("                                  background: url(img/02.png);\r\n");
-      out.write("                                  background-size: cover;\r\n");
-      out.write("                                  background-repeat: no-repeat;\">\r\n");
-      out.write("        \r\n");
-      out.write("                            </div>\r\n");
+      out.write("                            <div class=\"col-lg-6 d-none d-lg-block bg-formulario-image\"></div>\r\n");
       out.write("                            <div class=\"col-lg-6\">\r\n");
       out.write("                                <div class=\"p-5\">\r\n");
       out.write("                                    <div class=\"text-center\">\r\n");
-      out.write("                                        <h1 class=\"h4 text-gray-900 mb-4\">¡No pierdas la oportunidad!</h1>\r\n");
+      out.write("                                        <h1 class=\"h4 text-gray-900 mb-4\">¡Elige tú evento!</h1>\r\n");
       out.write("                                    </div>\r\n");
-      out.write("                                    \r\n");
-      out.write("                                    \r\n");
-      out.write("                                    \r\n");
-      out.write("                                    \r\n");
       out.write("                                    <form class=\"user\" method=\"post\" action=\"Participante\">\r\n");
       out.write("\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" name=\"nombre_parti\" class=\"form-control form-control-user\"\r\n");
-      out.write("                                                id=\"\" aria-describedby=\"emailHelp\" data-sb-validations=\"required\"\r\n");
-      out.write("                                                placeholder=\"Ingresar Nombre\">\r\n");
-      out.write("                                            <div class=\"invalid-feedback\" data-sb-feedback=\"name:required\">Nombre es necesario.</div>\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"email\" name=\"correo_parti\" class=\"form-control form-control-user\"\r\n");
-      out.write("                                                id=\"\" aria-describedby=\"emailHelp\" data-sb-validations=\"required\"\r\n");
-      out.write("                                                placeholder=\"Ingresar Correo\">\r\n");
-      out.write("                                             <div class=\"invalid-feedback\" data-sb-feedback=\"email:required\">Correo es necesario.</div>\r\n");
-      out.write("                                            <div class=\"invalid-feedback\" data-sb-feedback=\"email:email\">Gmail no valido.</div>\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" name=\"celu_parti\" class=\"form-control form-control-user\"\r\n");
-      out.write("                                                id=\"\" data-sb-validations=\"required\" placeholder=\"Ingresar # Celular\">\r\n");
-      out.write("                                             <div class=\"invalid-feedback\" data-sb-feedback=\"phone:required\">Telefono es necesario.</div>\r\n");
-      out.write("                                        </div>\r\n");
+      out.write("                                 \r\n");
       out.write("                                        <br>\r\n");
+      out.write("                                        <div class=\"form-group\">\r\n");
+      out.write("                                            <label for=\"\">Por favor eliga \r\n");
+      out.write("                                                el evento al que desea participar, recuerde que la\r\n");
+      out.write("                                                 informacion general se le enviara al correo que ingreso anteriormente.</label>\r\n");
+      out.write("                                                  <select  name=\"estado_even\" class=\"form-control select-estado\" id=\"\">\r\n");
+      out.write("                                                      <option value=\"\"> </option>\r\n");
+      out.write("                                              \r\n");
+      out.write("                                                  </select>\r\n");
+      out.write("                                          </div>\r\n");
       out.write("                                      \r\n");
-      out.write("                                        <a href=\"form_Even.jsp\" class=\"\">\r\n");
-      out.write("                                           <button class=\"btn btn-primary btn-user btn-block\">Registrarse</button>\r\n");
-      out.write("                                           <input type=\"hidden\" value=\"1\" name=\"opcion\"> \r\n");
+      out.write("                                          <br>\r\n");
+      out.write("                                        <a href=\"\" class=\"btn btn-primary btn-user btn-block\">\r\n");
+      out.write("                                            Participar\r\n");
       out.write("                                        </a>\r\n");
-      out.write("                                        \r\n");
-      out.write("                                        \r\n");
-      out.write("                                        <hr>\r\n");
-      out.write("                                       \r\n");
-      out.write("                                        ");
-if (request.getAttribute("MensajeError") != null) {
-      out.write("\r\n");
-      out.write("                                                    ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${MensajeError}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("    \r\n");
-      out.write("                                                    ");
- } else {
-      out.write("\r\n");
-      out.write("                                                    ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${MensajeExito}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\r\n");
-      out.write("                                                    ");
- }
-      out.write("\r\n");
       out.write("                                        <hr>\r\n");
       out.write("                                       \r\n");
       out.write("                                    </form>\r\n");
-      out.write("                                        \r\n");
-      out.write("                                        \r\n");
-      out.write("                                    \r\n");
+      out.write("                                    <hr>\r\n");
       out.write("                                    <div class=\"text-center\">\r\n");
       out.write("                                        <a class=\"small\" href=\"C_Evento.jsp\">Ir a Eventos</a>\r\n");
       out.write("                                    </div>\r\n");
@@ -179,7 +139,7 @@ if (request.getAttribute("MensajeError") != null) {
       out.write("\r\n");
       out.write("</body>\r\n");
       out.write("\r\n");
-      out.write("</html>\r\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
